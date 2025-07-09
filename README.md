@@ -36,9 +36,8 @@ A minimal, modern calculator web app built with Node.js and Express, styled to r
 
 ## 🖥️ Screenshot
 
-> _Add your screenshot here!_
->
-> ![Calculator Screenshot](./screenshot.png)
+![image](https://github.com/user-attachments/assets/10f127b7-8ce0-4cca-a632-99d5da44f5c3)
+
 
 ---
 
