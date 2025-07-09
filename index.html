@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <script src="app.js" defer></script>
+    <title>Node calculator</title>
+  </head>
+  <body>
+    <main class="calculator-card">
+      <label>a: <input type="number" name="a" id="a" /></label>
+      <label>b: <input type="number" name="b" id="b" /></label>
+      <select name="operator" id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+      </select>
+      <button id="calculate-btn">Oblicz</button>
+      <p id="result"></p>
+    </main>
+  </body>
+</html>

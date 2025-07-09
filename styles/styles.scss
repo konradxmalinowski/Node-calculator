@@ -1,0 +1,129 @@
+$border: #d0d7de;
+$bg: #f6f8fa;
+$bg-input: #fff;
+$text: #24292f;
+$primary: #0969da;
+$shadow: 0 1.5px 8px 0 rgba(27, 31, 35, 0.04);
+
+@mixin flexBox($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: $bg;
+  color: $text;
+  min-height: 100svh;
+  width: 100%;
+  @include flexBox();
+}
+
+main {
+  @include flexBox(column);
+}
+
+.calculator-card {
+  background: $bg;
+  border: 1px solid $border;
+  border-radius: 12px;
+  box-shadow: $shadow;
+  padding: 2.5rem 2rem 2rem 2rem;
+  min-width: 320px;
+  max-width: 90vw;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: stretch;
+}
+
+label {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+  color: $text;
+  font-weight: 500;
+}
+
+.input-style,
+input,
+select {
+  background: $bg-input;
+  border: 1px solid $border;
+  color: $text;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  padding: 10px 14px;
+  font-size: 1.05rem;
+  box-shadow: $shadow;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+select:focus {
+  border: 1.5px solid $primary;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(9, 105, 218, 0.15);
+}
+
+button {
+  background: $primary;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: $shadow;
+  margin-top: 0.5rem;
+  transition: background 0.18s, box-shadow 0.18s, transform 0.1s;
+}
+button:hover {
+  background: darken($primary, 7%);
+  box-shadow: 0 4px 16px 0 rgba(9, 105, 218, 0.1);
+  transform: translateY(-1px) scale(1.02);
+}
+button:active {
+  background: darken($primary, 12%);
+  transform: scale(0.98);
+}
+
+#result {
+  min-height: 2.5rem;
+  margin-top: 1.2rem;
+  font-size: 1.3rem;
+  color: $primary;
+  background: $bg-input;
+  border: 1px solid $border;
+  border-radius: 6px;
+  padding: 0.7rem 1.2rem;
+  text-align: center;
+  box-shadow: $shadow;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+#result:not(:empty) {
+  opacity: 1;
+}
+
+@media (max-width: 500px) {
+  .calculator-card {
+    min-width: unset;
+    padding: 1.2rem 0.5rem;
+  }
+  input,
+  button,
+  select {
+    width: 90vw;
+    min-width: 0;
+    font-size: 1rem;
+  }
+}
